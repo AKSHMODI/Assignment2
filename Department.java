@@ -10,15 +10,35 @@ public class Department {
    
    public Department(String name, String id) {
 	      // also initialize the vectors
+	   this.name = name;
+      this.id = id;
+      this.courseList = new Vector<course>();
+      this.registerList = new Vector<Student>();
+	   public void offerCourse(Course course) {
+      this.courseList.add(course);
+
+	   
+	   }
+       public void printCourseOffering(){
+      for(Course course:this.courseList)
+         System.out.println(course
+         )
+       }
+       public void printStudentsName(){}
+   for(Student student:registerList){
+      System.out.println(student);
+   }
 	   
 	   }
 
    public String getName() {
+	         return this.name;
+
 	   
    }
 
    public String getId() {
-	  
+	  return this.id;
    }
    
  	
@@ -27,5 +47,6 @@ public class Department {
       // of courses offered and number of students registered in the
       // department. Use the format:
       // ECSE: 53 courses, 460 students     
+	    return this.name+":"+String.valueOf(this.courseList)
    }
 }
